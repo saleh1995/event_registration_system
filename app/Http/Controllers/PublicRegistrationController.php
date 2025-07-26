@@ -34,7 +34,7 @@ class PublicRegistrationController extends Controller
 
         $attendee->update(['qr_code' => $qrFileName]);
 
-
+        Mail::to($attendee->email)->send(new QrCodeMail($attendee));
 
         return view('success', compact('attendee'));
 
