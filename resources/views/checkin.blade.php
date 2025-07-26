@@ -9,7 +9,7 @@
                 <p><strong>{{ __('checkin.name') }}:</strong> {{ $attendee->name }}</p>
                 <p><strong>{{ __('checkin.email') }}:</strong> {{ $attendee->email }}</p>
 
-                @if(session('status'))
+                @if(session('status') && !$attendee->checked_in_at)
                     <div class="alert alert-info mt-3">
                         {{ session('status') }}
                     </div>
