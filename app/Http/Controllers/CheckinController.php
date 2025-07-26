@@ -25,6 +25,7 @@ class CheckinController extends Controller
 
         $attendee->update([
             'checked_in_at' => now(),
+            'is_attended' => true,
         ]);
 
         return back()->with('status', __('checkin.success'));
