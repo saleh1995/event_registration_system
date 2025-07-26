@@ -27,4 +27,20 @@ return [
         'is_attended' => 'تم الحضور',
         'checked_in_at' => 'وقت الدخول',
     ],
+
+
+    'stats' => [
+        'total' => 'عدد المسجلين',
+        'attended' => 'عدد الحاضرين',
+        'absent' => 'عدد الغائبين',
+    ],
+
+    'actions' => [
+        'export_excel' => 'تصدير Excel',
+    ],
+
+    'export' => [
+        'completed' => 'تم إكمال تصدير المشاركين، وتم تصدير :count :rows بنجاح.',
+        'failed_to_export' => 'فشلت في التصدير',
+    ],
 ];
