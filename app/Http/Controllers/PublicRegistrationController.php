@@ -24,7 +24,7 @@ class PublicRegistrationController extends Controller
 
         $attendee = Attendee::create($data);
 
-        $qrContent = $attendee->id;
+        $qrContent = route('checkin', ['id' => $attendee->id]);
 
         $qrImage = QrCode::format('png')->size(300)->generate($qrContent);
 

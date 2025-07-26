@@ -11,7 +11,8 @@ class Attendee extends Model
         'email',
         'phone',
         'qr_code',
-        'is_attended'
+        'is_attended',
+        'checked_in_at',
     ];
 
 }
