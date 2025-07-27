@@ -142,7 +142,36 @@ class AttendeeResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('attend')
+                    ->label(__('filament.actions.attend'))
+                    ->icon('heroicon-o-check-circle')
+                    ->color('success')
+                    ->visible(fn(Attendee $record): bool => !$record->is_attended)
+                    ->action(function (Attendee $record): void {
+                        $record->update([
+                            'is_attended' => true,
+                            'checked_in_at' => now(),
+                        ]);
+                    })
+                    ->requiresConfirmation()
+                    ->modalHeading(__('filament.actions.confirm_attend'))
+                    ->modalDescription(__('filament.actions.confirm_attend_description'))
+                    ->modalSubmitActionLabel(__('filament.actions.confirm_attend')),
+                Tables\Actions\Action::make('not_attend')
+                    ->label(__('filament.actions.not_attend'))
+                    ->icon('heroicon-o-x-circle')
+                    ->color('danger')
+                    ->visible(fn(Attendee $record): bool => $record->is_attended)
+                    ->action(function (Attendee $record): void {
+                        $record->update([
+                            'is_attended' => false,
+                            'checked_in_at' => null,
+                        ]);
+                    })
+                    ->requiresConfirmation()
+                    ->modalHeading(__('filament.actions.confirm_not_attend'))
+                    ->modalDescription(__('filament.actions.confirm_not_attend_description'))
+                    ->modalSubmitActionLabel(__('filament.actions.confirm_not_attend')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

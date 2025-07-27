@@ -39,6 +39,12 @@ return [
 
     'actions' => [
         'export_excel' => 'تصدير Excel',
+        'attend' => 'تأكيد الحضور',
+        'not_attend' => 'إلغاء الحضور',
+        'confirm_attend' => 'تأكيد الحضور',
+        'confirm_attend_description' => 'هل أنت متأكد من تأكيد حضور هذا المشارك؟',
+        'confirm_not_attend' => 'إلغاء الحضور',
+        'confirm_not_attend_description' => 'هل أنت متأكد من إلغاء حضور هذا المشارك؟',
     ],
 
     'export' => [

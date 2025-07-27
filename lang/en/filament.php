@@ -37,6 +37,12 @@ return [
 
     'actions' => [
         'export_excel' => 'Export Excel',
+        'attend' => 'Mark as Attended',
+        'not_attend' => 'Mark as Not Attended',
+        'confirm_attend' => 'Confirm Attendance',
+        'confirm_attend_description' => 'Are you sure you want to mark this attendee as attended?',
+        'confirm_not_attend' => 'Mark as Not Attended',
+        'confirm_not_attend_description' => 'Are you sure you want to mark this attendee as not attended?',
     ],
 
     'export' => [
