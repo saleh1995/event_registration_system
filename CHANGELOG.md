@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   **Check-in System**: QR code-based check-in functionality
 -   **Success Page**: Confirmation page after successful registration
 -   **Responsive Design**: Mobile-friendly registration interface
+-   **Language Switching**: Dynamic language switcher for Arabic and English
 
 ##### Admin Panel Features
 

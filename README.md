@@ -134,6 +134,8 @@ APP_LOCALE=ar
 APP_FALLBACK_LOCALE=en
 ```
 
+**Language Switching**: Users can switch between Arabic and English using the language switcher in the top-right corner of the interface.
+
 ### File Storage
 
 Ensure the storage directory is writable:
