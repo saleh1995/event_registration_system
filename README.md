@@ -20,7 +20,7 @@ A modern Laravel-based event registration system with QR code functionality, bui
 -   **Export Functionality**: Export attendee data and statistics to Excel
 -   **QR Code Management**: View and manage QR codes for all attendees
 -   **Attendance Filtering**: Filter attendees by attendance status (all, attended, not attended)
--   **Attendance Actions**: Mark attendees as attended/not attended directly from the admin panel
+-   **Attendance Actions**: Mark attendees as attended/not attended directly from the admin panel (table and view pages)
 -   **Check-in Tracking**: Monitor check-in status and timestamps
 
 ### Technical Features

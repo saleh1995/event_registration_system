@@ -53,6 +53,11 @@ return [
         'success_statistics' => 'تم إكمال تصدير الإحصائيات وتم تصدير :count :rows بنجاح.'
     ],
 
+    'notifications' => [
+        'attendance_marked' => 'تم تأكيد الحضور بنجاح',
+        'attendance_unmarked' => 'تم إلغاء الحضور بنجاح',
+    ],
+
     'filters' => [
         'attendance_status' => 'حالة الحضور',
         'all' => 'الكل',

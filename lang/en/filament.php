@@ -51,6 +51,11 @@ return [
         'success_statistics' => 'Statistics export completed successfully, :count :rows exported.'
     ],
 
+    'notifications' => [
+        'attendance_marked' => 'Attendance marked successfully',
+        'attendance_unmarked' => 'Attendance unmarked successfully',
+    ],
+
     'filters' => [
         'attendance_status' => 'Attendance Status',
         'all' => 'All',

@@ -18,6 +18,7 @@ use Filament\Infolists\Components\ImageEntry;
 use App\Filament\Resources\AttendeeResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\AttendeeResource\RelationManagers;
+use Filament\Notifications\Notification;
 
 class AttendeeResource extends Resource
 {
@@ -152,6 +153,11 @@ class AttendeeResource extends Resource
                             'is_attended' => true,
                             'checked_in_at' => now(),
                         ]);
+
+                        Notification::make()
+                            ->title(__('filament.notifications.attendance_marked'))
+                            ->success()
+                            ->send();
                     })
                     ->requiresConfirmation()
                     ->modalHeading(__('filament.actions.confirm_attend'))
@@ -167,6 +173,11 @@ class AttendeeResource extends Resource
                             'is_attended' => false,
                             'checked_in_at' => null,
                         ]);
+
+                        Notification::make()
+                            ->title(__('filament.notifications.attendance_unmarked'))
+                            ->success()
+                            ->send();
                     })
                     ->requiresConfirmation()
                     ->modalHeading(__('filament.actions.confirm_not_attend'))
