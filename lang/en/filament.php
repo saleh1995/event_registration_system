@@ -44,4 +44,11 @@ return [
         'failed_to_export' => 'failed to export',
         'success_statistics' => 'Statistics export completed successfully, :count :rows exported.'
     ],
+
+    'filters' => [
+        'attendance_status' => 'Attendance Status',
+        'all' => 'All',
+        'attended' => 'Attended',
+        'not_attended' => 'Not Attended',
+    ],
 ];

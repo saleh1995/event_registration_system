@@ -125,7 +125,20 @@ class AttendeeResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('attendance_status')
+                    ->label(__('filament.filters.attendance_status'))
+                    ->options([
+                        'attended' => __('filament.filters.attended'),
+                        'not_attended' => __('filament.filters.not_attended'),
+                    ])
+                    ->default('all')
+                    ->query(function (Builder $query, array $data): Builder {
+                        return match ($data['value']) {
+                            'attended' => $query->where('is_attended', true),
+                            'not_attended' => $query->where('is_attended', false),
+                            default => $query,
+                        };
+                    }),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

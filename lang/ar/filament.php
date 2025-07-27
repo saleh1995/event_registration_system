@@ -46,4 +46,11 @@ return [
         'failed_to_export' => 'فشلت في التصدير',
         'success_statistics' => 'تم إكمال تصدير الإحصائيات وتم تصدير :count :rows بنجاح.'
     ],
+
+    'filters' => [
+        'attendance_status' => 'حالة الحضور',
+        'all' => 'الكل',
+        'attended' => 'حاضر',
+        'not_attended' => 'غائب',
+    ],
 ];

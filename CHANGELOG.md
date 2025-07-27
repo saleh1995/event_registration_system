@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     -   Export statistics to Excel
 -   **QR Code Management**: View and manage QR codes for all attendees
 -   **Search and Filter**: Search attendees by name, email, or phone
+-   **Attendance Status Filter**: Filter by all, attended, or not attended attendees
 -   **Check-in Tracking**: Monitor check-in status and timestamps
 -   **Bulk Operations**: Bulk delete functionality for attendees
 
