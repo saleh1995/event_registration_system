@@ -136,6 +136,14 @@ APP_FALLBACK_LOCALE=en
 
 **Language Switching**: Users can switch between Arabic and English using the language switcher in the top-right corner of the interface.
 
+### Admin Access
+
+After running the database seeder, you can access the admin panel with these default credentials:
+
+-   **Admin Panel URL**: `https://your-domain.com/admin`
+-   **Email**: `admin@gmail.com`
+-   **Password**: `admin`
+
 ### File Storage
 
 Ensure the storage directory is writable:
@@ -158,10 +166,14 @@ chmod -R 775 bootstrap/cache
 ### Admin Panel
 
 1. Access the admin panel at `/admin`
-2. Login with admin credentials
+2. Login with the default admin credentials:
+    - **Email**: `admin@gmail.com`
+    - **Password**: `admin`
 3. View dashboard with statistics
 4. Manage attendees through the AttendeeResource
 5. Export data as needed
+
+**⚠️ Security Note**: Please change the default admin password after first login for security purposes.
 
 ### Check-in Process
 
@@ -186,6 +198,26 @@ event_registration_system/
 ├── resources/views/      # Blade templates
 └── routes/              # Application routes
 ```
+
+## 🌐 Application Routes
+
+### Public Routes
+
+-   `GET /` - Registration form (main page)
+-   `GET /register` - Registration form (alias)
+-   `POST /register` - Process registration
+-   `GET /checkin/{id}` - Check-in page for attendees
+-   `POST /checkin/{id}` - Process check-in
+-   `GET /language/{locale}` - Switch language (ar/en)
+
+### Admin Routes
+
+-   `GET /admin` - Admin panel login
+-   `GET /admin/dashboard` - Admin dashboard with statistics
+-   `GET /admin/attendees` - Attendee management
+-   `GET /admin/attendees/{id}` - View attendee details
+-   `POST /admin/attendees/export` - Export attendee data
+-   `POST /admin/statistics/export` - Export statistics
 
 ## 🔒 Security
 
