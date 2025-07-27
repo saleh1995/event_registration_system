@@ -3,6 +3,8 @@
 return [
     'created_at' => 'تاريخ الإنشاء',
     'updated_at' => 'تاريخ التحديث',
+    'statistics' => 'الإحصائيات',
+    'row' => 'سطر',
 
     'user' => [
         'singular' => 'مستخدم',
@@ -42,5 +44,6 @@ return [
     'export' => [
         'completed' => 'تم إكمال تصدير المشاركين، وتم تصدير :count :rows بنجاح.',
         'failed_to_export' => 'فشلت في التصدير',
+        'success_statistics' => 'تم إكمال تصدير الإحصائيات وتم تصدير :count :rows بنجاح.'
     ],
 ];

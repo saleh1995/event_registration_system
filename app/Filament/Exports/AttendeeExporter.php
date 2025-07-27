@@ -43,7 +43,7 @@ class AttendeeExporter extends Exporter
 
         return __('filament.export.completed', [
             'count' => $successfulRows,
-            'rows' => str('row')->plural($export->successful_rows),
+            'rows' => str(__('filament.row'))->plural($export->successful_rows),
         ]) . $failedRowsText;
     }
 }
