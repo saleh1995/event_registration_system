@@ -3,13 +3,14 @@
 namespace App\Filament\Exports;
 
 use App\Models\Attendee;
+use App\Models\User;
 use Filament\Actions\Exports\Exporter;
 use Filament\Actions\Exports\ExportColumn;
 use Filament\Actions\Exports\Models\Export;
 
 class StatisticsExporter extends Exporter
 {
-    protected static ?string $model = Attendee::class;
+    protected static ?string $model = User::class;
 
     public static function getColumns(): array
     {
