@@ -1,61 +1,240 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Event Registration System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern Laravel-based event registration system with QR code functionality, built using Filament admin panel. This system allows attendees to register for events and provides check-in functionality using QR codes.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Public Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Event Registration Form**: Public registration form for attendees
+-   **QR Code Generation**: Automatic QR code generation for each attendee
+-   **Email Notifications**: QR codes sent via email to registered attendees
+-   **Check-in System**: QR code-based check-in functionality
+-   **Multi-language Support**: Arabic and English language support
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin Panel Features
 
-## Learning Laravel
+-   **Filament Admin Panel**: Modern admin interface built with Filament
+-   **Attendee Management**: View, search, and manage all registered attendees
+-   **Real-time Statistics**: Dashboard with attendance statistics
+-   **Export Functionality**: Export attendee data and statistics to Excel
+-   **QR Code Management**: View and manage QR codes for all attendees
+-   **Check-in Tracking**: Monitor check-in status and timestamps
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Technical Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **Laravel 12**: Latest Laravel framework
+-   **Filament 3**: Modern admin panel
+-   **QR Code Integration**: Using SimpleSoftwareIO/simple-qrcode
+-   **Email System**: Laravel mail functionality
+-   **Database Migrations**: Proper database structure
+-   **Multi-language**: Localization support
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Requirements
 
-## Laravel Sponsors
+-   PHP 8.2 or higher
+-   Composer
+-   MySQL/PostgreSQL/SQLite
+-   Web server (Apache/Nginx)
+-   Mail server configuration
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Installation
 
-### Premium Partners
+### 1. Clone the Repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone <repository-url>
+cd event_registration_system
+```
 
-## Contributing
+### 2. Install Dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+npm install
+```
 
-## Code of Conduct
+### 3. Environment Configuration
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Edit the `.env` file with your configuration:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+APP_NAME="Event Registration System"
+APP_ENV=production
+APP_KEY=your-app-key
+APP_DEBUG=false
+APP_URL=https://your-domain.com
 
-## License
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=event_registration
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MAIL_MAILER=smtp
+MAIL_HOST=your-smtp-host
+MAIL_PORT=587
+MAIL_USERNAME=your-email
+MAIL_PASSWORD=your-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your-email
+MAIL_FROM_NAME="${APP_NAME}"
+
+APP_LOCALE=ar
+APP_FALLBACK_LOCALE=en
+```
+
+### 4. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+### 6. Create Storage Link
+
+```bash
+php artisan storage:link
+```
+
+### 7. Create Admin User
+
+```bash
+php artisan db:seed --class=AdminUserSeeder
+```
+
+### 8. Build Assets (Production)
+
+```bash
+npm run build
+```
+
+## 🔧 Configuration
+
+### Mail Configuration
+
+Configure your mail settings in the `.env` file to enable email notifications with QR codes.
+
+### Language Configuration
+
+The system supports Arabic (ar) and English (en). Set your preferred language in the `.env` file:
+
+```env
+APP_LOCALE=ar
+APP_FALLBACK_LOCALE=en
+```
+
+### File Storage
+
+Ensure the storage directory is writable:
+
+```bash
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+```
+
+## 🚀 Usage
+
+### Public Registration
+
+1. Visit the main page (`/`) to access the registration form
+2. Fill in the attendee information (name, email, phone)
+3. Submit the form to register
+4. QR code will be generated and sent via email
+5. Attendee can use the QR code for check-in
+
+### Admin Panel
+
+1. Access the admin panel at `/admin`
+2. Login with admin credentials
+3. View dashboard with statistics
+4. Manage attendees through the AttendeeResource
+5. Export data as needed
+
+### Check-in Process
+
+1. Scan or access the QR code link
+2. Verify attendee information
+3. Click check-in button
+4. System marks attendee as present
+
+## 📁 Project Structure
+
+```
+event_registration_system/
+├── app/
+│   ├── Filament/           # Admin panel resources
+│   ├── Http/Controllers/   # Application controllers
+│   ├── Mail/              # Email templates
+│   └── Models/            # Eloquent models
+├── database/
+│   ├── migrations/        # Database migrations
+│   └── seeders/          # Database seeders
+├── lang/                 # Language files
+├── resources/views/      # Blade templates
+└── routes/              # Application routes
+```
+
+## 🔒 Security
+
+-   CSRF protection enabled
+-   Input validation on all forms
+-   Secure file uploads
+-   Email verification system
+-   Admin panel authentication
+
+## 📧 Email Templates
+
+The system includes email templates for QR code delivery. Customize the templates in:
+
+-   `resources/views/mail/qr-code-mail.blade.php`
+-   `lang/ar/mail.php` (Arabic translations)
+-   `lang/en/mail.php` (English translations)
+
+## 🌐 Localization
+
+The system supports multiple languages:
+
+-   Arabic (ar) - Primary language
+-   English (en) - Fallback language
+
+Language files are located in the `lang/` directory.
+
+## 📊 Database Schema
+
+### Attendees Table
+
+-   `id` - Primary key
+-   `name` - Attendee name
+-   `email` - Unique email address
+-   `phone` - Phone number
+-   `qr_code` - QR code file path
+-   `is_attended` - Attendance status
+-   `checked_in_at` - Check-in timestamp
+-   `created_at` - Registration timestamp
+-   `updated_at` - Last update timestamp
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. Set `APP_ENV=production` in `.env`
+2. Set `APP_DEBUG=false` in `.env`
+3. Configure your web server to point to the `public/` directory
+4. Ensure proper file permissions
+5. Set up SSL certificate for HTTPS
+6. Configure mail server for email functionality
+
+---
+
+**Note**: Make sure to configure your mail server properly to enable QR code email functionality. The system requires a working mail configuration to send QR codes to registered attendees.
